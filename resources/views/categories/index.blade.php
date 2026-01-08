@@ -26,6 +26,7 @@
                 <td>{{ $category->description }}</td>
                 <td>
                     <a href="{{ route('categories.show', $category) }}"><button>Ver</button></a>
+                    <a href="{{ route('categories.edit', $category) }}"><button>Editar</button></a>
                     <form action="{{ route('categories.destroy', $category) }}" method="POST" style="display: inline;">
                         @csrf
                         @method('DELETE')
