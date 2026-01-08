@@ -14,6 +14,7 @@
         <tr>
             <th>ID</th>
             <th>Nombre</th>
+            <th>Nº productos</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -22,6 +23,7 @@
             <tr>
                 <td>{{ $tag->id }}</td>
                 <td>{{ $tag->name }}</td>
+                <td>{{ count($tag->products) }}</td>
                 <td>
                     <a href="{{ route('tags.show', $tag) }}"><button>Ver</button></a>
                     <form action="{{ route('tags.destroy', $tag) }}" method="POST" style="display: inline;">
