@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,3 +16,4 @@ Route::get('/products/{product}', [ProductController::class, 'show'])->name('pro
 Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
 
 Route::resource('/categories', CategoryController::class);
+Route::resource('/tags', TagController::class);
