@@ -16,6 +16,7 @@
             <th>Nombre</th>
             <th>Categoría</th>
             <th>Descripción</th>
+            <th>Etiquetas</th>
             <th>Precio</th>
             <th>Stock</th>
             <th>Acciones</th>
@@ -28,6 +29,11 @@
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->category->name }}</td>
                 <td>{{ $product->description }}</td>
+                <td>
+                    @foreach ($product->tags as $tag )
+                        <span class="tag">{{ $tag->name }}</span>
+                    @endforeach
+                </td>
                 <td>{{ number_format($product->price, 2) }}€</td>
                 <td>{{ $product->stock }}</td>
                 <td>

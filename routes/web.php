@@ -14,6 +14,8 @@ Route::get('/products/create', [ProductController::class, 'create'])->name('prod
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
 Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+Route::post('/products/{product}/attach-tag', [ProductController::class, 'attachTag'])->name('products.attachTag');
+Route::delete('/products/{product}/detach-tag/{tag}', [ProductController::class, 'detachTag'])->name('products.detachTag');
 
 Route::resource('/categories', CategoryController::class);
 Route::resource('/tags', TagController::class);
