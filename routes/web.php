@@ -19,3 +19,5 @@ Route::delete('/products/{product}/detach-tag/{tag}', [ProductController::class,
 
 Route::resource('/categories', CategoryController::class);
 Route::resource('/tags', TagController::class);
+Route::post('/products/{product}/attach-tag', [ProductController::class, 'attachTag'])->name('products.attachTag');
+Route::delete('/products/{product}/detach-tag/{tag}', [ProductController::class, 'detachTag'])->name('products.detachTag');

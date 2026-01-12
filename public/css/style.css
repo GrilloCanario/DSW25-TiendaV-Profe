@@ -81,17 +81,14 @@ footer {
   font-size: 0.9em;
 }
 
-
 .tags-list {
   list-style: none;
   padding: 0;
 }
 
-
 .tags-list li {
   display: inline-block;
 }
-
 
 .tags-list li button{
   background-color: lightyellow;
@@ -100,7 +97,6 @@ footer {
   margin: 2px;
   font-size: 0.9em;
 }
-
 
 .tags-list li button:hover {
   background-color: red;

@@ -30,7 +30,7 @@
                 <td>{{ $product->category->name }}</td>
                 <td>{{ $product->description }}</td>
                 <td>
-                    @foreach ($product->tags as $tag )
+                    @foreach ($product->tags as $tag)
                         <span class="tag">{{ $tag->name }}</span>
                     @endforeach
                 </td>

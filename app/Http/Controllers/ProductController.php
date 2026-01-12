@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Tag;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -42,7 +43,8 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         $allTags = Tag::all();
-        return view('products.show', compact('product', 'allTags'));
+        $allTags = Tag::all();
+        return view('products.show', compact('product', 'allTags', 'allTags'));
     }
 
     /**
@@ -70,14 +72,16 @@ class ProductController extends Controller
         return redirect()->route('products.index');
     }
 
-    public function attachTag(Request $request, Product $product) {
+    public function attachTag(Request $request, Product $product)
+    {
         $tagId = $request->input('tag_id');
         $product->tags()->attach($tagId);
-        return redirect()->route('products.show', compact('product'));
+        return redirect()->route('products.show', $product);
     }
 
-    public function detachTag(Product $product, Tag $tag) {
+    public function detachTag(Product $product, Tag $tag)
+    {
         $product->tags()->detach($tag->id);
-        return redirect()->route('products.show', compact('product'));
+        return redirect()->route('products.show', $product);
     }
 }
