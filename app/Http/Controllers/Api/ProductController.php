@@ -22,6 +22,9 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $product = Product::create($request->all());
+        // return new ProductResource($product);  // Lo devuelve con estado 200 y lo suyo es que fuera 201.
+        return response()->json(new ProductResource($product), 201);
     }
 
     /**
