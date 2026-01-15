@@ -7,7 +7,7 @@
 @endpush
 
 @section('content')
-<h1>Lista de Categorías</h1>
+<h1>Lista de Etiquetas</h1>
 <a href="{{ route('tags.create') }}"><button>Nueva Etiqueta</button></a>
 <table>
     <thead>
